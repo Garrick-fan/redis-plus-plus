@@ -192,6 +192,12 @@ long long Redis::pttl(const StringView &key) {
     return reply::parse<long long>(*reply);
 }
 
+long long Redis::memory_usage(const StringView &key) {
+    auto reply = command(cmd::memory_usage, key);
+
+    return reply::parse<long long>(*reply);
+}
+
 OptionalString Redis::randomkey() {
     auto reply = command(cmd::randomkey);
 
