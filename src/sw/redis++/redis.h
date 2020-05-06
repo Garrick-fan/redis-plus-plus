@@ -413,6 +413,7 @@ public:
     /// @see https://redis.io/commands/pttl
     long long pttl(const StringView &key);
 
+    long long memory_usage(const StringView &key);
     /// @brief Get a random key from current database.
     /// @return A random key.
     /// @note If the database is empty, `randomkey` returns `OptionalString{}` (`std::nullopt`).

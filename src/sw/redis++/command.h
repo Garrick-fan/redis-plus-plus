@@ -192,6 +192,10 @@ inline void pttl(Connection &connection, const StringView &key) {
     connection.send("PTTL %b", key.data(), key.size());
 }
 
+inline void memory_usage(Connection &connection, const StringView &key) {
+    connection.send("MEMORY USAGE %b", key.data(), key.size());
+}
+
 inline void randomkey(Connection &connection) {
     connection.send("RANDOMKEY");
 }

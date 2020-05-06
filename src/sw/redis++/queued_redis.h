@@ -224,6 +224,10 @@ public:
         return command(cmd::pttl, key);
     }
 
+    QueuedRedis& memory_usage(const StringView &key) {
+        return command(cmd::memory_usage, key);
+    }
+
     QueuedRedis& randomkey() {
         return command(cmd::randomkey);
     }
